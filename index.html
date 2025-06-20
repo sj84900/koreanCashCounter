@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>사진 업로드</title>
+</head>
+<body>
+  <h2>사진을 촬영하거나 업로드하세요</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*" capture="environment" required />
+    <button type="submit">업로드</button>
+  </form>
+  {% if message %}
+    <p>처리 결과: {{ message }}</p>
+  {% endif %}
+</body>
+</html>
