@@ -13,7 +13,7 @@ cache: false
 device: '0'
 workers: 2
 project: null
-name: train4
+name: train
 exist_ok: false
 pretrained: true
 optimizer: auto
