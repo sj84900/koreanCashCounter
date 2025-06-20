@@ -1,13 +1,13 @@
-train: train/images
-val: valid/images
-test: test/images
+train: ../train/images
+val: ../valid/images
+test: ../test/images
 
 nc: 8
 names: ['0', '1', '2', '3', '4', '5', '6', '7']
 
 roboflow:
-  workspace: yewon-v80ql
-  project: korean-money-lkeay
-  version: 1
+  workspace: sejun-jeong
+  project: korean-cash-counter
+  version: 2
   license: CC BY 4.0
-  url: https://universe.roboflow.com/yewon-v80ql/korean-money-lkeay/dataset/1
+  url: https://universe.roboflow.com/sejun-jeong/korean-cash-counter/dataset/2
