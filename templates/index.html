@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>사진 업로드</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<script>
+  if (performance.navigation.type === 1) {
+    window.location.href = "/";
+  }
+</script>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h2 class="mb-4 text-center">사진을 촬영하거나 업로드하세요</h2>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <input type="file" class="form-control" name="file" accept="image/*" capture="environment" required />
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">업로드</button>
+          </div>
+        </form>
+
+        {% if money_data %}
+          <div class="alert alert-success mt-4" role="alert">
+            {% if flag %}
+              <img src="runs/detect/latest/image0.jpg" class="img-fluid my-3" alt="분석 결과 이미지">
+            {% endif %}
+            <br>
+            <strong>총 금액 :</strong> {{ total }}
+            <table class="table table-bordered mt-3">
+              <tbody>
+              {% for value, count in money_data %}
+                {% if count > 0 %}
+                  <tr>
+                    <td style="width: 150px;">{{ value }}원</td>
+                    <td>{{ count }}개</td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
