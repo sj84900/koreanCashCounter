@@ -12,8 +12,8 @@ app = FastAPI()
 app.mount("/runs", StaticFiles(directory="runs"), name="runs")
 
 templates = Jinja2Templates(directory="templates")
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+UPLOAD_DIR = "runs/detect/latest"
+
 mConvert = [10,50,100,500,1000,5000,10000,50000]
 threshold = 0.8
 
@@ -23,18 +23,18 @@ async def form(request: Request):
 
 @app.post("/upload", response_class=HTMLResponse)
 async def upload(request: Request, file: UploadFile = File(...)):
+    if os.path.exists(UPLOAD_DIR):
+        shutil.rmtree(UPLOAD_DIR)
+    os.makedirs(UPLOAD_DIR, exist_ok=True)
+
     filename = os.path.join(UPLOAD_DIR, file.filename)
     with open(filename, "wb") as f:
         shutil.copyfileobj(file.file, f)
-
     im = cv2.imread(UPLOAD_DIR + "/" + file.filename)
 
     model = YOLO("usingModel/last.pt")
 
-    result_dir = "runs/detect"
-    if os.path.exists(result_dir + "/latest"):
-        shutil.rmtree(result_dir + "/latest")
-    results = model.predict(source=im, save=True, project=result_dir, name="latest")
+    results = model.predict(source=im, save=True, project='runs/detect', name="latest", exist_ok=True)
 
     money = [0, 0, 0, 0, 0, 0, 0, 0]
     print("=" * 30)
