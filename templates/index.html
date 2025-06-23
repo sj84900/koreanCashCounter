@@ -10,6 +10,13 @@
   if (performance.navigation.type === 1) {
     window.location.href = "/";
   }
+
+  function openGallery() {
+    // capture 속성을 제거하여 갤러리 접근 가능하게 변경
+    let fileInput = document.getElementById('fileInput');
+    fileInput.removeAttribute('capture');
+    fileInput.click();
+  }
 </script>
 <body class="bg-light">
 
@@ -20,7 +27,8 @@
       <div class="card-body">
         <form action="/upload" method="post" enctype="multipart/form-data">
           <div class="d-flex align-items-center mb-3">
-            <input type="file" class="form-control me-3" name="file" accept="image/*" capture="environment" required />
+            <button type="button" class="btn btn-light btn-outline-secondary text-center me-1" onclick="openGallery()">📁</button>
+            <input type="file" class="form-control me-3" name="file" accept="image/*" capture="environment" required id="fileInput" />
             <button type="submit" class="btn btn-primary text-center px-1" style="width: 80px">업로드</button>
           </div>
         </form>
