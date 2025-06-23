@@ -1,4 +1,4 @@
-# Korean cash counter > 2025-06-20 2:49pm
+# Korean cash counter > 2025-06-23 5:21pm
 https://universe.roboflow.com/sejun-jeong/korean-cash-counter
 
 Provided by a Roboflow user

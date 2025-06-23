@@ -8,6 +8,6 @@ names: ['0', '1', '2', '3', '4', '5', '6', '7']
 roboflow:
   workspace: sejun-jeong
   project: korean-cash-counter
-  version: 2
+  version: 3
   license: CC BY 4.0
-  url: https://universe.roboflow.com/sejun-jeong/korean-cash-counter/dataset/2
+  url: https://universe.roboflow.com/sejun-jeong/korean-cash-counter/dataset/3
