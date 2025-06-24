@@ -8,7 +8,7 @@ def main():
     print(torch.cuda.get_device_name(0))  # GPU 이름 확인
     print(torchvision.ops.nms)
 
-    model = YOLO("runs/detect/train/weights/last.pt")
+    model = YOLO("usingModel/last.pt")
     model.to('cuda')
 
     results = model.train(
