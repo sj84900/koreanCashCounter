@@ -8,7 +8,7 @@ def main():
     print(torch.cuda.get_device_name(0))  # GPU 이름 확인
     print(torchvision.ops.nms)
 
-    model = YOLO("usingModel/last.pt")
+    model = YOLO("usingModel/last_before.pt")
     model.to('cuda')
 
     results = model.train(
@@ -22,8 +22,6 @@ def main():
     )
 
     model.val()
-    model.export(format="onnx", dynamic=True)
-
 
 if __name__ == "__main__":
     from multiprocessing import freeze_support
