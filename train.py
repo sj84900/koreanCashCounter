@@ -17,7 +17,8 @@ def main():
         batch=16,         # 4~8 추천 (너무 크면 CUDA OOM 에러 발생)
         imgsz=640,       # 해상도는 기본 640이 적당
         workers=2,       # GPU가 약한 경우에는 0~2 추천
-        device=0
+        device=0,
+        patience=10
     )
 
     model.val()

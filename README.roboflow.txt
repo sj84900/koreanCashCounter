@@ -1,8 +1,8 @@
 
-Korean cash counter - v4 2025-06-24 10:43am
+Korean cash counter - v6 2025-06-24 1:01pm
 ==============================
 
-This dataset was exported via roboflow.com on June 24, 2025 at 1:43 AM GMT
+This dataset was exported via roboflow.com on June 24, 2025 at 4:03 AM GMT
 
 Roboflow is an end-to-end computer vision platform that helps you
 * collaborate with your team on computer vision projects
@@ -17,7 +17,7 @@ visit https://github.com/roboflow/notebooks
 
 To find over 100k other datasets and pre-trained models, visit https://universe.roboflow.com
 
-The dataset includes 2254 images.
+The dataset includes 2202 images.
 Money are annotated in YOLOv11 format.
 
 The following pre-processing was applied to each image:
@@ -27,5 +27,7 @@ The following pre-processing was applied to each image:
 The following augmentation was applied to create 3 versions of each source image:
 * Equal probability of one of the following 90-degree rotations: none, clockwise, counter-clockwise, upside-down
 * Random rotation of between -15 and +15 degrees
+* Random shear of between -15° to +15° horizontally and -15° to +15° vertically
+* Random Gaussian blur of between 0 and 3 pixels
 
 
