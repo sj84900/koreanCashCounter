@@ -24,7 +24,7 @@
 ### 1. 필수 라이브러리 설치
 ```bash
 pip install fastapi uvicorn jinja2 opencv-python ultralytics
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118 (cuda 11.8 기준)
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118   # (cuda 11.8 기준)
 ```
 
 ### 2. 프로젝트 폴더 구조
