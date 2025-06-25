@@ -45,14 +45,14 @@ moneycounter/
 │   └── labels/		# 테스트 이미지 라벨 파일 저장 폴더
 ├── train/…
 ├── valid/…
-├── usingModel/	# YOLO 모델 저장 폴더
-│   ├── last.pt 		# 최신 학습된 YOLO 모델 파일
+├── usingModel/		# YOLO 모델 저장 폴더
+│   ├── last.pt		# 최신 학습된 YOLO 모델 파일
 │   └── last_before.pt	# 이전 학습된 YOLO 모델 파일
 │
-├── main.py 		# FastAPI 서버 실행 파일
-├── train.py  		# YOLO 모델 학습 스크립트
-├── predict.py  		# YOLO 모델 예측 스크립트
-└── data.yaml 		# YOLO 학습 데이터 설정 파일
+├── main.py		# FastAPI 서버 실행 파일
+├── train.py		# YOLO 모델 학습 스크립트
+├── predict.py		# YOLO 모델 예측 스크립트
+└── data.yaml		# YOLO 학습 데이터 설정 파일
 ```
 
 ## 서버 실행
