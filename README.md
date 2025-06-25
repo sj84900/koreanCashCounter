@@ -29,15 +29,30 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 
 ### 2. 프로젝트 폴더 구조
 ```
-project_root/
-│── main.py          # FastAPI 서버 실행 파일
-│── train.py         # YOLO 모델 학습 파일
-│── predict.py       # YOLO 모델 예측 파일
-│── templates/
-│   └── index.html   # 웹 페이지 템플릿
-│── runs/            # YOLO 결과 저장 폴더
-│── usingModel/      # YOLO 모델 저장 폴더
-│── data.yaml        # YOLO 학습 데이터 설정 파일
+moneycounter/
+│
+├── runs/ 		# YOLO 실행 결과 저장 폴더
+│   └── detect/		# YOLO 감지 결과 폴더
+│        ├── latest/	# 최신 감지 결과 저장 폴더
+│        ├── predict/	# 예측 결과 저장 폴더
+│        └── train/	# 학습 결과 저장 폴더
+│
+├── templates/		# 웹 애플리케이션 템플릿 폴더
+│   └── index.html 	# 웹 페이지 템플릿 파일
+│
+├── test/           # 테스트 데이터셋 폴더/ train, valid도 동일하므로 이하 중략
+│   ├── images/               # 테스트 이미지 저장 폴더 
+│   └── labels/                 # 테스트 이미지 라벨 파일 저장 폴더
+├── train/…
+├── valid/…
+├── usingModel/	# YOLO 모델 저장 폴더
+│   ├── last.pt 		# 최신 학습된 YOLO 모델 파일
+│   └── last_before.pt	# 이전 학습된 YOLO 모델 파일
+│
+├── main.py 		# FastAPI 서버 실행 파일
+├── train.py  		# YOLO 모델 학습 스크립트
+├── predict.py  		# YOLO 모델 예측 스크립트
+└── data.yaml 		# YOLO 학습 데이터 설정 파일
 ```
 
 ## 서버 실행
