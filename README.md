@@ -40,9 +40,9 @@ moneycounter/
 ├── templates/		# 웹 애플리케이션 템플릿 폴더
 │   └── index.html 	# 웹 페이지 템플릿 파일
 │
-├── test/           # 테스트 데이터셋 폴더/ train, valid도 동일하므로 이하 중략
-│   ├── images/               # 테스트 이미지 저장 폴더 
-│   └── labels/                 # 테스트 이미지 라벨 파일 저장 폴더
+├── test/			# 테스트 데이터셋 폴더/ train, valid도 동일하므로 이하 중략
+│   ├── images/			# 테스트 이미지 저장 폴더 
+│   └── labels/			# 테스트 이미지 라벨 파일 저장 폴더
 ├── train/…
 ├── valid/…
 ├── usingModel/	# YOLO 모델 저장 폴더
